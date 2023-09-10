@@ -50,7 +50,7 @@ void main() async {
   // Open the database and store the reference.
   final database = openDatabase(
     // Set the path to the database.
-    join(await getDatabasesPath(), 'doggie_database.db'),
+    join(await getDatabasesPath(), 'contacts_database.db'),
 
 //5. creating the table
     // When the database is first created, create a table to store contacts.
@@ -65,7 +65,7 @@ void main() async {
   );
 
 //7. Define a function that inserts contacts into the database
-  Future<void> insertDog(Contact contact) async {
+  Future<void> insertContact(Contact contact) async {
     // Get a reference to the database.
     final db = await database;
 
@@ -89,7 +89,7 @@ void main() async {
     notes: 'raju got successful at last, you too will.',
   );
 
-  await insertDog(Raju);
+  await insertContact(Raju);
 
 //9. Reading list of Contacts
 
